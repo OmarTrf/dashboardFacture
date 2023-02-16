@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta charset="utf-8">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- FontGoogle -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet"> 
+  <title>wel</title>
+
+  <!-- ChartGoogle fournisseur -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'fornisseur');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['cheque', 25],
+          ['espece', 35],
+          ['non-paye', 40]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Fournisseur',
+                       'width':460,
+                       'height':250,
+                      'colors':['#6a89cc','#9980FA','#60a3bc']};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_divFornisseur'));
+        chart.draw(data, options);
+      }
+    </script>
+    <!-- ChartGoogle client -->
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'client');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['cheque', 30],
+          ['espece', 25],
+          ['non-paye',60]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Client',
+                       'width':460,
+                       'height':250,
+                      'colors':['#6a89cc','#9980FA','#60a3bc']};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_divClient'));
+        chart.draw(data, options);
+      }
+    </script>
+    <!-- ChartGoogleAll  -->
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mounth', 'chique', 'espece'],
+          ['janvier',  1000,      400],
+          ['fevrier',  1170,      460],
+          ['mars',  800,       900],
+          ['april',  1030,      400]
+        ]);
+
+        var options = {
+          title: 'All',
+          'width':700,
+          'height':200,
+          colors:['#2ed573','#9980FA'],
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_divAll'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+  <!-- ChartGoogle USER -->
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+    ["Name","TotalSales"],
+    ["iPod 12Gb",0],
+    ["Touch 12Gb",200],
+    ["iPod Nano",700],
+    ["iPod 12Gb",360]
+    ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Chique Client', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+    ["Name","Client"],
+    ["iPod",0],
+    [" Touch 12Gb",800],
+    ["12Gb",700],
+    ["Touch",360]
+    ]);
+
+          var options = {
+            title: 'Company Performance',
+            hAxis: {title: 'Type', titleTextStyle: {color: 'red'}}
+          };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
+          chart.draw(data, options);
+        }
+  </script>
+
+</head>
+
+
+
+
+<body>
+  <div class="row">
+    <!--------- Menu Vertical ---------->
+    <nav>
+        <div class="logo">
+          <img src="logo/lion-logo.png">
+        </div>
+        <ul>
+          <h4>Admins</h4>
+          <li class="menu_active"><span><i class="fa-solid fa-scroll"></i><p>Factures</p></span></li>
+          <li><i class="fa-solid fa-user"></i><p>Client</p></li>
+          <li><i class="fas fa-chart-line"></i><p>Recouverements</p></li>
+          <li><i class="fa-brands fa-buffer"></i><p>Factures</p></li>
+          <li><i class="fas fa-file-alt"></i><p>Articles</p></li>
+          <h4 class="sett">Settings</h4>
+          <li><i class="fas fa-history"></i><p>Historique</p></li>
+          <li><i class="fas fa-cogs"></i><p>Options</p></li>
+          <li><i class="fas fa-chart-bar"></i><p>Chartes</p></li>
+          <br><br>
+          <li><i class="fas fa-moon"></i><p>Dark</p></li>
+          <li><i class="fas fa-chevron-left"></i></i><p>Collapse</p></li>
+        </ul>
+    </nav>
+    <!-- Seacr Horizontal -->
+    <div class="search">
+      <img src="logo/lion-logo.png">
+      <h2>Welcomme Mr. <span>Mohamed</span></h2>
+      <form>
+        <div>
+          <input type="text" name="" placeholder="Search...">
+          <i class="fas fa-search"></i>
+        </div>
+      </form>
+    </div>
+    <!--------- Right --------->
+    <section>
+        <!-- Liste Facture -->
+        <div class="box factures box_active">
+          <h1>Liste factures</h1>
+          <div class="two_tables">
+            <div class="tbl-header">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>client</th>
+                    <th>Montant</th>
+                    <th>Espece</th>
+                    <th>More infos</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>2</td>
+                    <td>SALAH</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>nini nono </td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>nini nono </td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>nini nono </td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>mohamed</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>mohamed</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+
+                  <tr>
+                    <td>8</td>
+                    <td>mohamed</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>mohamed</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                   <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                   <tr>
+                    <td>9</td>
+                    <td>mohamed ali</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                   <tr>
+                    <td>9</td>
+                    <td>mohamed ali</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                   <tr>
+                    <td>9</td>
+                    <td>mohamed ali</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                   <tr>
+                    <td>9</td>
+                    <td>mohamed ali</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Liste Clients -->
+        <div class="box client">
+          <h1>Liste Clients</h1>
+          <div class="two_tables">
+            <div class="tbl-header">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>name</th>
+                    <th>M.Paye</th>
+                    <th>M.Impaye</th>
+                    <th>More infos</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>2</td>
+                    <td>SALAH</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>nini nono </td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>nini nono </td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>nini nono </td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                   <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>khalid</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td class='select'>Details</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--Dashboard Graphes -->
+        <div class="box graphes">
+           <h1>Dashboard</h1>
+               <div class="dash">
+                  <div id="chart_divFornisseur" style="position: absolute;top: 0;left: 0;height: 100%!important;"></div>
+                  <div id="chart_divClient" style="position:absolute;left: 51%;top: 0;"></div>
+               </div>
+               <div class="dash2">
+                 <div id="chart_divAll"></div>
+               </div>
+           <div class="btnsNew">
+              <button>Nouvelle facture</button>
+              <button>Nouvelle order de vairement</button>
+           </div>
+        </div>
+        <!-- New Facture -->
+        <div class="box new_facture">
+            <h1>Add New Facture</h1>
+            <div class="autocomplete">
+              <label>Nom Client</label>
+              <input type="text" name="" placeholder="Enter your name...">
+            </div>
+            <div class="tables" id="tableNewFacture">
+              <table>
+                <thead>
+                  <tr>
+                    <th>produits</th>
+                    <th>quantite</th>
+                    <th>httc</th>
+                    <th>ttc</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <select>
+                        <option value="----">----</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="oil">Oil</option>
+                        <option value="gasoil">Gasoil</option>
+                      </select>
+                    </td>
+                    <td><input type="number" name="" placeholder="Quantite.."></td>
+                    <td>102.4</td>
+                    <td>12.4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select>
+                        <option value="----">----</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="oil">Oil</option>
+                        <option value="gasoil">Gasoil</option>
+                      </select>
+                    </td>
+                    <td><input type="number" name="" placeholder="Quantite.."></td>
+                    <td>102.4</td>
+                    <td>12.4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select>
+                        <option value="----">----</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="oil">Oil</option>
+                        <option value="gasoil">Gasoil</option>
+                      </select>
+                    </td>
+                    <td><input type="number" name="" placeholder="Quantite.."></td>
+                    <td>102.4</td>
+                    <td>12.4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select>
+                        <option value="----">----</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="oil">Oil</option>
+                        <option value="gasoil">Gasoil</option>
+                      </select>
+                    </td>
+                    <td><input type="number" name="" placeholder="Quantite.."></td>
+                    <td>102.4</td>
+                    <td>12.4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select>
+                        <option value="----">----</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="oil">Oil</option>
+                        <option value="gasoil">Gasoil</option>
+                      </select>
+                    </td>
+                    <td><input type="number" name="" placeholder="Quantite.."></td>
+                    <td>102.4</td>
+                    <td>12.4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select>
+                        <option value="----">----</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="oil">Oil</option>
+                        <option value="gasoil">Gasoil</option>
+                      </select>
+                    </td>
+                    <td><input type="number" name="" placeholder="Quantite.."></td>
+                    <td>102.4</td>
+                    <td>12.4</td>
+                  </tr>              
+                </tbody>
+              </table>
+            </div>
+            <div class="desc">
+              <div class="left">
+                    <button><i class="fa-solid fa-cart-plus"></i></button>
+                    <button>Send</button>
+              </div>
+              <div class="right">
+                    <div class="total">
+                                  <div>
+                                    <h3>Total HTC</h3>
+                                    <p>5700 dh</p>
+                                  </div>
+                                  <div>
+                                    <h3>Total HTC</h3>
+                                    <p>5700 dh</p>
+                                  </div>
+                                  <div>
+                                    <h3>Total PRIX</h3>
+                                    <p>5700 dh</p>
+                                  </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+        <!-- New Article -->
+        <div class="box new_facture new_article">
+            <h1>Add New Article</h1>
+            <div class="autocomplete produit_name">
+              <div class="name">
+                  <label>Nom produit</label>
+                  <input type="text" name="" placeholder="Enter your produit...">
+              </div>
+              <div class="prixArticle">
+                <div>
+                  <label>Prix d'achat</label>
+                  <input type="number" name="" placeholder="HT">
+                  <input type="text" name="" placeholder="TTC" disabled>
+                </div>
+                <div>
+                  <label>Prix de vente</label>
+                  <input type="number" name="" placeholder="HT">
+                  <input type="text" name="" placeholder="TTC" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="tables" id="tableNewFacture">
+              <table>
+                <thead>
+                  <tr>
+                    <th>article name</th>
+                    <th>prix d'achat TTC</th>
+                    <th>prix vente TTC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>gaz</td>
+                    <td>3252</td>
+                    <td>4333</td>
+                  </tr>
+                  <tr>
+                   <td>gaz</td>
+                    <td>3252</td>
+                    <td>4333</td>
+                  </tr>
+                  <tr>
+                    <td>gaz</td>
+                    <td>3252</td>
+                    <td>4333</td>
+                  </tr>
+                  <tr>
+                    <td>gaz</td>
+                    <td>3252</td>
+                    <td>4333</td>
+                  </tr> 
+                  <tr>
+                    <td>gaz</td>
+                    <td>3252</td>
+                    <td>4333</td>
+                  </tr> 
+                  <tr>
+                    <td>gaz</td>
+                    <td>3252</td>
+                    <td>4333</td>
+                  </tr>             
+                </tbody>
+              </table>
+            </div>
+            <div class="desc">
+              <div class="left">
+                    <button><i class="fa-solid fa-cart-plus"></i></button>
+              </div>
+            </div>
+        </div>
+    </section>
+    <aside class="aside_reglement">
+        <div class="close_icon"><i class="fa-solid fa-xmark"></i></div>
+        <div class="reglement">
+        <div class="title">
+          <h1>regelement</h1>
+        </div>
+        <div class="body_regelement">
+          <div class="left">
+            <div class="form">
+              <div>
+                <label>Nom</label>
+                <input type="text" name="" placeholder="enter name..">
+              </div>
+              <div>
+                <label>Montant</label>
+                <input type="text" name="" placeholder="enter montant..">
+              </div>
+              <div>
+                <label>Espece</label>
+                <input type="text" name="" placeholder="enter montant..">
+              </div>
+              <div class="row">
+                <button>Send</button>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="two_tables">
+                    <div class="tbl-header">
+                      <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                          <tr>
+                            <th>Photo</th>
+                            <th>Date</th>
+                            <th>Montant</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div class="tbl-content">
+                      <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="file" name="">
+                            </td>
+                            <td>
+                              <input type="date" name="">
+                            </td>
+                            <td>
+                              <input type="text" name="" placeholder="Enter montant">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="file" name="">
+                            </td>
+                            <td>
+                              <input type="date" name="">
+                            </td>
+                            <td>
+                              <input type="text" name="" placeholder="Enter montant">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="file" name="">
+                            </td>
+                            <td>
+                              <input type="date" name="">
+                            </td>
+                            <td>
+                              <input type="text" name="" placeholder="Enter montant">
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              </div>
+              <button class="add_regelement"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>  
+    </aside>
+    <div class="cheque">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Date</th>
+            <th scope="col">Avance</th>
+            <th scope="col">cheque</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="file" name="">
+            </td>
+            <td>$1,190</td>
+            <td>12/24/2020</td>
+            <td>$1,190</td>
+            <td><i class="fas fa-ban"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="">
+            </td>
+            <td>$1,190</td>
+            <td>12/24/2020</td>
+            <td>$1,190</td>
+            <td><i class="fas fa-close"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="">
+            </td>
+            <td>$1,190</td>
+            <td>12/24/2020</td>
+            <td>$1,190</td>
+            <td><i class="fas fa-ban"></i></td>
+          </tr>
+        </tbody>
+      </table> 
+      <i class="fa-solid fa-close close"></i>
+    </div>
+    <!-- USER -->
+    <div class="user">
+      <i class="fa-solid fa-close close"></i>
+      <div class="content">
+      <div class="info_user">
+        <div>
+          <h3>Nom CLient : </h3>
+          <p>mohamed folani</p>
+        </div>
+        <div>
+          <h3>Chiffre CLient : </h3>
+          <p>1234</p>
+        </div>
+      </div>
+      <div class="content_user">
+        <div>
+          <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Montant</th>
+                    <th>Espece</th>
+                    <th>More Info</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                   <tr>
+                    <td>123</td>
+                    <td>$1,190</td>
+                    <td>$1,190</td>
+                    <td>See More</td>
+                  </tr>
+                </tbody>
+          </table> 
+        </div>
+        <div>
+          <div id="chart_div2"></div>
+          <div id="chart_div3"></div>
+        </div>
+       </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<script>
+  menu = document.querySelector('nav');
+  btns_menu = menu.querySelectorAll('ul li');
+  box = document.querySelectorAll('.box');
+  for(let i=0;i<btns_menu.length;i++){
+    btns_menu[i].addEventListener('click',function(){
+      for(let j=0;j<box.length;j++){
+        box[j].classList.remove('box_active');
+        btns_menu[j].classList.remove('menu_active');
+      }
+      this.classList.add('menu_active');
+      box[i].classList.add('box_active');
+    })
+  }
+  // Aside regelement
+  close = document.querySelector('.close_icon');
+  btn_send_new_facture = document.querySelectorAll('.new_facture .desc .left button')[1];
+  close.addEventListener('click',function(){
+    document.querySelector('.aside_reglement').classList.remove('active_regelement');
+  })
+  btn_send_new_facture.addEventListener('click',function(){
+    document.querySelector('.aside_reglement').classList.add('active_regelement');
+  })
+  // Cheque
+  document.querySelector('.cheque i.close').addEventListener('click',function(){
+    document.querySelector('.cheque').style.display = 'none';
+  })
+</script>
+</body>
+</html>
